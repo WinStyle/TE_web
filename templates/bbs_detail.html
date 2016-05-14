@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% load comments %}
+{% block page-content %}
+{{ blog_obj.title }}
+
+<br>
+{{ blog_obj.content|safe }}
+ <hr>
+{% get_comment_count for blog_obj as comment_count %}
+{{ comment_count }}
+{% render_comment_list for blog_obj %}
+{% endblock page-content %}
